@@ -1,22 +1,14 @@
 
-import { StyleSheet, View, Text, Button } from 'react-native';
+import { View, Text } from 'react-native';
+import { globalStyles } from '../Styles/global';
 
 function Contact() {
 
   return (
-    <View style={styles.container}>
-        <Text>Contact Screen</Text>
+    <View style={globalStyles.container}>
+        <Text style={globalStyles.font20}>Contact Screen</Text>
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#8fcbbc"
-  }
-});
 
 export default Contact;

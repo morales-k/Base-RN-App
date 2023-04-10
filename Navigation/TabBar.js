@@ -1,19 +1,10 @@
-import { View, Text, Pressable, Dimensions, StyleSheet } from 'react-native'
+import { View, Text, Pressable } from 'react-native';
+import { tabbarStyles } from '../Styles/tabbar';
 
-const {width} = Dimensions.get('window')
-
-const TabBar = ({ state, descriptors, navigation}) =>{
+const TabBar = ({ state, navigation}) =>{
   return (
-    <View style={styles.mainContainer}>
+    <View style={tabbarStyles.mainContainer}>
       {state.routes.map((route, index) => {
-        const { options } = descriptors[route.key];
-        const label =
-          options.tabBarLabel !== undefined
-            ? options.tabBarLabel
-            : options.title !== undefined
-            ? options.title
-            : route.name;
-
         const isFocused = state.index === index;
 
         const onPress = () => {
@@ -28,12 +19,12 @@ const TabBar = ({ state, descriptors, navigation}) =>{
         };
 
         return (
-          <View key = {index} style = {[styles.mainItemContainer, {borderRightWidth: label=="notes"? 3:0}]}>
+          <View key = {index} style={tabbarStyles.mainItemContainer}>
             <Pressable
               onPress = {onPress}
-              style = {{backgroundColor: isFocused ? "#030D16" : "#182028", borderRadius: 20, }}>
-              <View style = {{justifyContent: 'center', alignItems: 'center', flex: 1, padding: 15}}>
-                <Text style={{color: "#f2f2f2"}}>{route.name}</Text>
+              style = {isFocused ? tabbarStyles.focusedRoute : tabbarStyles.unfocusedRoute}>
+              <View style={tabbarStyles.textContainer}>
+                <Text style={tabbarStyles.routeName}>{route.name}</Text>
               </View>
             </Pressable>
           </View>
@@ -42,25 +33,5 @@ const TabBar = ({ state, descriptors, navigation}) =>{
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  mainContainer: {
-    flexDirection: 'row',
-    position: 'absolute',
-    bottom: 25,
-    backgroundColor: "#182028",
-    borderRadius: 25,
-    marginHorizontal: width*0.1
-  },
-  mainItemContainer: {
-    flex: 1,
-    justifyContent: 'center', 
-    alignItems: 'center', 
-    marginVertical: 10,
-    borderRadius: 1, 
-    borderColor: "#333B42"
-  }, 
-})
-
 
 export default TabBar;

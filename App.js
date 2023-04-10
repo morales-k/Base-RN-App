@@ -1,12 +1,13 @@
-import { StyleSheet, SafeAreaView, View } from 'react-native';
+import { SafeAreaView, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import Navigation from "./Navigation/Navigation";
+import { globalStyles } from './Styles/global';
 
 function App() {
 
   return (
     <SafeAreaView>
-      <View style={styles.container}>
+      <View style={globalStyles.pageBase}>
         <NavigationContainer>
           <Navigation />
         </NavigationContainer>
@@ -14,13 +15,5 @@ function App() {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    width: "100%",
-    height: "100%",
-    backgroundColor: "teal"
-  }
-});
 
 export default App;
