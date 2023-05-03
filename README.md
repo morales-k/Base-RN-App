@@ -1,0 +1,1 @@
+A bookstore app built using React Native and Expo. The app uses Tab Navigation to switch between screens and includes mailto and tel links.
