@@ -29,6 +29,7 @@ export const tabbarStyles = StyleSheet.create({
   routeName: {
     color: colors.white,
     fontSize: 16,
+    textAlign: 'center',
   },
   focusedRoute: {
     backgroundColor: colors.gray,

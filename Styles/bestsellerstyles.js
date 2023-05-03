@@ -25,12 +25,11 @@ export const bestsellerStyles = StyleSheet.create({
   },
   bookAuthor: {
     fontSize: 20,
-    fontWeight: 'bold',
     marginLeft: windowWidth > 1023 ? 5 : 20,
     textAlign: 'left',
   },
   bookDescription: {
-    fontSize: 20,
+    fontSize: 18,
     marginTop: 20,
     marginLeft: windowWidth > 1023 ? 5 : 20,
     textAlign: 'left',
