@@ -5,7 +5,7 @@ export const colors = {
   white: "#F2F2F2",
   purple: "#40405F",
   gray: "#3A3A3D",
-  lightgray: "#D3D2DC",
+  lightgray: "#D1D1D1",
 };
 
 export const globalStyles = StyleSheet.create({
@@ -72,4 +72,14 @@ export const globalStyles = StyleSheet.create({
     borderColor: colors.gray,
     borderWidth: 2,
   },
+  contactBtn: {
+    backgroundColor: colors.purple,
+    padding: 10,
+    borderRadius: 4,
+    marginTop: 10,
+  },
+  contactBtnText: {
+    fontSize: 18,
+    color: colors.white,
+  }
 });
