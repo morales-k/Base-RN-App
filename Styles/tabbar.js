@@ -8,6 +8,12 @@ export const tabbarStyles = StyleSheet.create({
     bottom: 0,
     backgroundColor: colors.purple,
   },
+  mainContainerWeb: {
+    width: '100vw',
+    position: 'relative',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
   mainItemContainer: {
     flex: 1,
     justifyContent: 'center', 

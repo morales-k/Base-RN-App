@@ -1,9 +1,14 @@
-import { View, Text, Pressable } from 'react-native';
+import { View, Text, Pressable, Platform } from 'react-native';
 import { tabbarStyles } from '../Styles/tabbar';
 
-const TabBar = ({ state, navigation}) =>{
+const TabBar = (props) => {
+ const { state, navigation } = props;
+ const platform = Platform.OS;
+
   return (
-    <View style={tabbarStyles.mainContainer}>
+    <View style={platform === "web" ? 
+        [tabbarStyles.mainContainer, tabbarStyles.mainContainerWeb] : 
+        tabbarStyles.mainContainer}>
       {state.routes.map((route, index) => {
         const isFocused = state.index === index;
 
@@ -22,7 +27,9 @@ const TabBar = ({ state, navigation}) =>{
           <View key = {index} style={tabbarStyles.mainItemContainer}>
             <Pressable
               onPress = {onPress}
-              style = {isFocused ? tabbarStyles.focusedRoute : tabbarStyles.unfocusedRoute}>
+              style = {isFocused ? 
+                tabbarStyles.focusedRoute : 
+                tabbarStyles.unfocusedRoute}>
               <View style={tabbarStyles.textContainer}>
                 <Text style={tabbarStyles.routeName}>{route.name}</Text>
               </View>
