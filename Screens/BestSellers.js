@@ -2,13 +2,13 @@
 import { View, Text } from 'react-native';
 import { globalStyles } from '../Styles/global';
 
-function Account() {
+function BestSellers() {
 
   return (
     <View style={globalStyles.container}>
-        <Text style={globalStyles.font20}>Account Screen</Text>
+        <Text style={globalStyles.heading}>Best Sellers Screen</Text>
     </View>
   )
 }
 
-export default Account;
+export default BestSellers;
